@@ -1,4 +1,4 @@
-Select FirstName, Marks
+Select FirstName, Marks,
 CASE
 WHEN Marks >=90 THEN 'A'
 WHEN Marks >=75 THEN 'B'
