@@ -1,1 +1,1 @@
-SELECT FirstName UPPER(FirstName) AS UpperName FROM Students;
+SELECT FirstName, UPPER(FirstName) AS UpperName FROM Students;
