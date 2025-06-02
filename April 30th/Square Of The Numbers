@@ -1,0 +1,11 @@
+using System;
+public class SquareOfNumbers 
+{
+  public static void Main (string[] args) 
+  {
+     Console.Write("Please enter a number:");
+    int input = Convert.ToInt32(Console.ReadLine());
+    int result = input * input;
+        Console.WriteLine("Squre of " + input + " is: " + result);
+  }
+}

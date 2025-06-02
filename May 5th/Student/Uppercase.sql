@@ -1,0 +1,1 @@
+SELECT FirstName, UPPER(FirstName) AS UpperName FROM Students;

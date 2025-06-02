@@ -1,0 +1,37 @@
+using System;
+using System.Collections;
+public class Program
+{
+    public static void Main()
+    {
+        ArrayList StudentNames = new ArrayList();
+        StudentNames.Add("Sasank");
+        StudentNames.Add("Nikitha");
+        StudentNames.Add("Pranati");
+        StudentNames.Add("Srikar");
+        StudentNames.Add("Gayathri");
+
+        Console.WriteLine("Initial list of Students: ");
+        DisplayStudents(StudentNames);
+
+        string nametofind = "Pranati";
+        bool exists = StudentNames.Contains(nametofind);
+        Console.WriteLine($"\nIs '{nametofind}' in the list ? {(exists ? "Yes" : "No")}");
+            if(StudentNames . Count >=2)
+            {
+            string removedName = (string) StudentNames[1];
+            StudentNames . RemoveAt(1);
+            Console.WriteLine($"\n Removed the second student : {removedName}");
+            }
+            Console.WriteLine("\n Final list of Students :");
+            DisplayStudents(StudentNames);
+     }
+            public static void DisplayStudents(ArrayList Students)
+    {
+        foreach (string name in Students)
+        {
+            Console.WriteLine($"-  {name}  ");
+        }
+    }
+}
+

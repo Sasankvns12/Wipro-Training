@@ -1,0 +1,19 @@
+using System;
+
+class Program
+{
+    static void PrintArray(int[] arr, int index)
+    {
+        if (index == arr.Length)
+            return;
+        Console.Write(arr[index] + " ");
+        PrintArray(arr, index + 1);
+    }
+
+    static void Main()
+    {
+        int[] arr = { 1, 2, 3, 4, 5, 6, 7 };
+        Console.Write("Array elements: ");
+        PrintArray(arr, 0); 
+    }
+}

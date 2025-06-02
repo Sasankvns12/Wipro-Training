@@ -1,0 +1,30 @@
+using System;
+class Program
+{
+    
+    static (int result, string steps) FactorialWithSteps(int n)
+    {
+        if (n == 0)
+            return (1, "1"); 
+
+        var (subResult, subSteps) = FactorialWithSteps(n - 1); 
+        int result = n * subResult;
+        string steps = n == 1 ? $"{n}" : $"{n} * {subSteps}"; 
+
+        return (result, steps);
+    }
+
+    static void Main()
+    {
+        Console.Write("Enter a non-negative integer: ");
+        int num = int.Parse(Console.ReadLine());
+
+        if (num < 0)
+            Console.WriteLine("Factorial is not defined for negative numbers.");
+        else
+        {
+            var (result, steps) = FactorialWithSteps(num);
+            Console.WriteLine($"{num}! = {steps} = {result}");
+        }
+    }
+}

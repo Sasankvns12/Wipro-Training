@@ -1,0 +1,39 @@
+using System;
+
+class Program
+{
+    // Recursive function to calculate sum of digits
+    static (int sum, string steps) SumOfDigits(int n)
+    {
+        // Base case: single digit
+        if (n < 10)
+            return (n, $"{n}");
+        
+        // Recursive call for remaining digits
+        var (remainingSum, remainingSteps) = SumOfDigits(n / 10);
+        
+        // Current digit
+        int currentDigit = n % 10;
+        int totalSum = remainingSum + currentDigit;
+        
+        // Build step string
+        string currentStep = $"{remainingSteps} + {currentDigit}";
+        
+        return (totalSum, currentStep);
+    }
+
+    static void Main()
+    {
+        Console.Write("Enter a positive integer: ");
+        int number = int.Parse(Console.ReadLine());
+        
+        if (number < 0)
+            Console.WriteLine("Please enter a positive number.");
+        else
+        {
+            var (result, steps) = SumOfDigits(number);
+            Console.WriteLine($"\nCalculation Steps: {steps}");
+            Console.WriteLine($"Sum of digits: {result}");
+        }
+    }
+}

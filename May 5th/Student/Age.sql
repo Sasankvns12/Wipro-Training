@@ -1,0 +1,1 @@
+SELECT FirstName, DATEDIFF(YEAR, DOB, GETDATE()) AS Age FROM Students;
